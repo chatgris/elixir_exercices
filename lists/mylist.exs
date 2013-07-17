@@ -10,4 +10,8 @@ defmodule MyList do
   def add1([]), do: []
 
   def add1([head | tail]), do: [head + 1 | add1(tail)]
+
+  def map([], _func), do: []
+
+  def map([ head | tail ], func), do: [func.(head) | map(tail, func)]
 end
