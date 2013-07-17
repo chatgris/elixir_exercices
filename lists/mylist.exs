@@ -17,6 +17,12 @@ defmodule MyList do
 
   def sum(list), do: _sum(list, 0)
 
+  def reduce([], value, _), do: value
+
+  def reduce([head | tail], value, fun) do
+    reduce(tail, fun.(head, value), fun)
+  end
+
   defp _sum([], total), do: total
 
   defp _sum([head | tail], total), do: _sum(tail, head + total)
