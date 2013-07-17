@@ -6,4 +6,8 @@ defmodule MyList do
   def square([]), do: []
 
   def square([head | tail]), do: [head * head | square(tail)]
+
+  def add1([]), do: []
+
+  def add1([head | tail]), do: [head + 1 | add1(tail)]
 end
