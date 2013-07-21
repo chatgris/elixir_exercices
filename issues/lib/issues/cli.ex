@@ -46,6 +46,7 @@ defmodule Issues.CLI do
       |> decode_response
       |> convert_to_list_of_hashdicts
       |> sort_into_ascending_order
+      |> Enum.take(count)
   end
 
   def decode_response({:ok, body}) do
