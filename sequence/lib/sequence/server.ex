@@ -12,4 +12,8 @@ defmodule Sequence.Server do
   def handle_cast({:increment_number, delta}, current_number) do
     { :noreply, current_number + delta}
   end
+
+  def format_status(_reason, [_pdict, state]) do
+    [data: [{'State', "My current state id '#{inspect state}', and I'm happy"}]]
+  end
 end
