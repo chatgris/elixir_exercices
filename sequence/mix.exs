@@ -10,7 +10,10 @@ defmodule Sequence.Mixfile do
 
   # Configuration for the OTP application
   def application do
-    []
+    [
+      mod: { Sequence, 456},
+      registered: [:sequence]
+    ]
   end
 
   # Returns the list of dependencies in the format:
